@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Header Processor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <header>
+            <div class="logo-container">
+                <div class="logo-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="4" width="20" height="16" rx="2" fill="url(#logo-gradient)" />
+                        <path d="M4 6L12 13L20 6" stroke="white" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <defs>
+                            <linearGradient id="logo-gradient" x1="2" y1="4" x2="22" y2="20"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#3b82f6" />
+                                <stop offset="1" stop-color="#10b981" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <h1>EMS6</h1>
+            </div>
+            <p>Clean and modify email headers with professional precision</p>
+        </header>
+
+        <div class="mode-navigation">
+            <button class="nav-btn active" id="singleModeBtn">Single Source</button>
+            <button class="nav-btn" id="bulkModeBtn">Bulk Source</button>
+        </div>
+
+        <main>
+            <!-- Single Mode Section -->
+            <div id="singleModeSection">
+                <div class="input-section">
+                    <label for="emailSource">Source Email</label>
+                    <textarea id="emailSource" placeholder="Paste your raw email source here..."></textarea>
+                </div>
+
+                <div class="controls-section">
+                    <button id="processBtn" class="primary-btn">
+                        <span>Process Header</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="output-section">
+                    <label for="emailOutput">Result</label>
+                    <div class="textarea-wrapper">
+                        <textarea id="emailOutput" readonly
+                            placeholder="Processed output will appear here..."></textarea>
+                        <button id="copyBtn" class="icon-btn" title="Copy to Clipboard">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M8 5H6C4.89543 5 4 5.89543 4 7V19C4 20.1046 4.89543 21 6 21H16C17.1046 21 18 20.1046 18 19V17M19 15V7C19 5.89543 18.1046 5 17 5H15M8 5V7C8 7.55228 8.44772 8 9 8H13C13.5523 8 14 7.55228 14 7V5M8 5C8 4.44772 8.44772 4 9 4H13C13.5523 4 14 4.44772 14 5"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bulk Mode Section -->
+            <div id="bulkModeSection" class="hidden">
+                <div class="bulk-upload-section">
+                    <label for="fileInput">Upload Files (.txt, .eml)</label>
+                    <div class="file-upload-wrapper">
+                        <input type="file" id="fileInput" multiple accept=".txt,.eml">
+                        <div class="upload-area" id="dropZone">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 16V8M12 8L9 11M12 8L15 11" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M3 15C3 17.8284 3 19.2426 3.87868 20.1213C4.75736 21 6.17157 21 9 21H15C17.8284 21 19.2426 21 20.1213 20.1213C21 19.2426 21 17.8284 21 15"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span>Choose files or drag & drop</span>
+                        </div>
+                    </div>
+                    <div id="fileCount" class="file-count">0 files selected</div>
+                </div>
+
+                <div id="bulkResultsContainer" class="bulk-results">
+                    <!-- Dynamic results will be added here -->
+                </div>
+            </div>
+        </main>
+
+        <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="checkbox">
+                <input type="checkbox" id="checkbox" />
+                <div class="slider round">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 3V4M12 20V21M4 12H3M21 12H20M5.636 5.636L6.343 6.343M17.657 17.657L18.364 18.364M5.636 18.364L6.343 17.657M17.657 6.343L18.364 5.636M12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8Z"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </label>
+        </div>
+
+        <footer>
+            <p>Kouryani Youssef-EMS6 &copy; 2025 - All rights reserved</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

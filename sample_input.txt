@@ -1,0 +1,86 @@
+Delivered-To: ussefyoussef2024@gmail.com
+Received: by 2002:a05:6504:2803:b0:2d5:4d0d:a88 with SMTP id bv3csp1897358ltb;
+        Mon, 22 Dec 2025 02:09:24 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHTliVLOKrNW79V+OqcrPFfnh9kwZgzKk7gxsItcxAVn4cYe9f9IrNEMK/GPdrD2IPtfYZJ
+X-Received: by 2002:a05:6a00:438d:b0:7e8:43f5:bd5a with SMTP id d2e1a72fcca58-7ff67852a95mr8934330b3a.70.1766398163737;
+        Mon, 22 Dec 2025 02:09:23 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1766398163; cv=none;
+        d=google.com; s=arc-20240605;
+        b=PsQrOF8vnLg/PNUQhldHNeI81huy5siNr4o0/65lp4LAKiup++cjxA7o6d1i2R7ZaL
+         4crYKd6cEMkG90p4lbXZY/X/gLC1ABae+6tRpTo0qZnt8cM25iVl76JeyNYRu/6Qlj8G
+         zmeh28GPNM1bYnHB8sOyZR0Qn9Aktu6SOG/3WVXWnYWvbB4G6Azv5djTZxJHDPqD1hhe
+         A20qtmJebQjIcTIHY5MFwwNCMpSgaCB4KxwVVBsWYoCp/Q3dFA/a6XbbKeEyy7Xi9gU9
+         XFQ2tu8PxHaa9FRbcvOzJRL6w8kWjyfKmRapsynNoTq8iv2JqTxrf0ldtfiHQrJOoUOQ
+         i5Rw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=message-id:cc:subject:to:from:content-transfer-encoding
+         :mime-version:date:dkim-signature;
+        bh=HgtQAvrNX7RTIDfkvT7q1mp1+A0D8F0nyEsr/kuT+2E=;
+        fh=ejUGC3HzxxwFj5YQqCGalU1Yz/MUjMKfJJ/l/Q2mTIU=;
+        b=I+OxFjbm80ovANOulD947PqrJnRv7YujUwpjK3pXuhQh/17homWIWOSpYpgcYqXmQ7
+         3m6x3UPXaZmo+JhW1C3KhJFlc3izsKv4K/YsPO2HIkzJXrybde49x3lHMHMASNBy15aX
+         aF6tYZMZOzR5emVids62b3WS6KYmjrm1JmBBieKLBmkdzzzFz3ryqP9OwcPb+49g3ie2
+         lZFJAx+zTIqIEdc1A7RiDNosAzjeEJf1FuaZw7OlO95sb4b8qQ2mBKrMm5GMP25+I10c
+         ekCLei7Fbzv3LW/424SgC/SO68ma15TiFpveBEIXHWdfdTj5FFLEqDRUbAs2QyF+PtE+
+         lkNg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass (test mode) header.i=@cdjapan.co.jp header.s=ccdct202401 header.b=C10nBln7;
+       spf=pass (google.com: domain of orders@cdjapan.co.jp designates 202.234.167.50 as permitted sender) smtp.mailfrom=orders@cdjapan.co.jp;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=cdjapan.co.jp
+Return-Path: <orders@cdjapan.co.jp>
+Received: from dcg.neowing.co.jp (dcg.neowing.co.jp. [202.234.167.50])
+        by mx.google.com with ESMTPS id d2e1a72fcca58-7ff7e797916si14718375b3a.288.2025.12.22.02.09.23
+        for <ussefyoussef2024@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 22 Dec 2025 02:09:23 -0800 (PST)
+Received-SPF: pass (google.com: domain of orders@cdjapan.co.jp designates 202.234.167.50 as permitted sender) client-ip=202.234.167.50;
+Authentication-Results: mx.google.com;
+       dkim=pass (test mode) header.i=@cdjapan.co.jp header.s=ccdct202401 header.b=C10nBln7;
+       spf=pass (google.com: domain of orders@cdjapan.co.jp designates 202.234.167.50 as permitted sender) smtp.mailfrom=orders@cdjapan.co.jp;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=cdjapan.co.jp
+Received: from dcg.neowing.co.jp (gwyn.dc.neowing.co.jp [192.168.8.4]) by dcg.neowing.co.jp (Postfix) with SMTP id 70D8AF01C0E for <ussefyoussef2024@gmail.com>; Mon, 22 Dec 2025 19:09:22 +0900 (JST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=cdjapan.co.jp; s=ccdct202401; t=1766398162; bh=HgtQAvrNX7RTIDfkvT7q1mp1+A0D8F0nyEsr/kuT+2E=; h=Date:From:To:Subject:Cc:From; b=C10nBln7kI3HLXCaFoHiFYkw9GDSh+vE2AeRckKEuuHRJdXRqKbfZUvDMfUoBL3sl
+	 Svg6Y5+Eylgyl3o/05DL9AOyxKO6H/TIBEoAdnqmSH6unwnl5iiiepaHkaHR5ryNd8
+	 kQWQXFyuqipExFD2UH7iadxrXruURl9ipItnDs0GmLqUARxfKuURb67JUMjbWSCyzG
+	 ZyPpu1Cx9sTF6tg52cmwveZaS66X6mIVSO/zzHlmXcxZJf6NYNP2jyqXcjadzW+lWL
+	 eRCpZiguMK4PsXjS/HPhDKhNLGpP95HjIcwUszZhhygtSC5hlhWAu2A5yEdGAjKC3K
+	 IwcXqaDDMqNqA==
+Received: (qmail 23304 invoked from network); 22 Dec 2025 10:09:22 -0000
+Received: from sleepy.dc.neowing.co.jp (192.168.9.75)
+  by dcg.neowing.co.jp with SMTP; 22 Dec 2025 10:09:22 -0000
+Received: (qmail 3430 invoked by uid 33); 22 Dec 2025 19:09:22 +0900
+Date: Mon, 22 Dec 2025 19:09:22 +0900
+MIME-Version: 1.0
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+From: orders@cdjapan.co.jp
+To: ussefyoussef2024@gmail.com
+Subject: CDJapan Account Verification
+Cc: order@cdjapan.co.jp
+Message-Id: <1766398162.525CC11a0.3073@ns.cdjapan.co.jp>
+
+Hi.
+
+This email is sent to you as a part of the process
+to create your new customer account at CDJapan.
+
+To complete the process, click on the link below and
+enter the password you created on the site.
+
+https://www.cdjapan.co.jp/z/register/done/2336ab7a7c0ca513da7856c081b2927c
+
+
+Please contact us if our assistance is needed.
+
+CDJapan Customer Support: info@cdjapan.co.jp
+
+Thank you.
+
+CDJapan
+https://www.cdjapan.co.jp/
+***********************************
+*Your Privacy: CDJapan is committed to protecting your privacy.
+We do not sell or share your email address with any other third party.
+Our privacy policy:
+https://www.cdjapan.co.jp/help/policy.html
