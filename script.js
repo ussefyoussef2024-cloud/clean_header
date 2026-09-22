@@ -91,12 +91,11 @@
           return `${address.slice(0, at)}${options.fromUserTag}${domain}`;
         });
       }
-      if (key === 'message-id') {
-        value = value.replace(/<([^<>\s@]+)@([^<>\s]+)>/g, (_, localPart) => {
-          const domain = options.domainReplacement ? `@${options.domainReplacement}` : '';
-          return `<[IDmailer]_id_[ID]-f_${localPart}${options.messageIdTag}${domain}>`;
-        });
-      }
+    if (key === 'message-id') {
+      value = value.replace(/<([^<>\s@]+)@([^<>\s]+)>/g, (_, localPart, domain) => {
+        return `<${localPart}${options.messageIdTag}@${domain}>`;
+      });
+    }
       return `${header.name}: ${value}`;
     });
 
